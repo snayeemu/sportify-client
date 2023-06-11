@@ -1,16 +1,17 @@
 import { createContext, useEffect, useState } from "react";
 import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
   onAuthStateChanged,
   signOut,
   updateProfile,
   GoogleAuthProvider,
   signInWithPopup,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
 } from "firebase/auth";
-import app from "../firebase/firebase.config";
+import { getAuth } from "firebase/auth";
+
 import axios from "axios";
+import app from "../firebase/firebase.config";
 
 export const AuthContext = createContext(false); // null is giving error
 
@@ -19,7 +20,6 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const googleProvider = new GoogleAuthProvider();
-
   const auth = getAuth(app);
 
   useEffect(() => {
