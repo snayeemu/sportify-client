@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
 import useAuth from "../../hooks/useAuth";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
-  const { signIn } = useAuth();
+  const { signIn, googleSignIn } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -34,6 +34,35 @@ const Login = () => {
       .catch((error) => {
         const errorMessage = error.message;
         setError(errorMessage);
+      });
+  };
+
+  const handleGoogleLogin = () => {
+    googleSignIn()
+      .then((result) => {
+        // The signed-in user info.
+        const user = result.user;
+        // IdP data available using getAdditionalUserInfo(result)
+        // ...
+        console.log(user);
+        const toSave = { name: user.displayName, email: user.email };
+        fetch("http://localhost:5000/users", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(toSave),
+        })
+          .then((res) => res.json())
+          .then(() => {
+            navigate(from, { replace: true });
+          });
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        const errorMessage = error.message;
+        // ...
+        console.log(errorMessage);
       });
   };
 
@@ -96,27 +125,14 @@ const Login = () => {
           </div>
           <div className="text-center">
             <p className="text-sm text-gray-600">Or log in with:</p>
-            <div className="flex justify-center">
+            <div className="flex justify-center mt-1">
               <button
+                onClick={handleGoogleLogin}
                 type="button"
                 className="btn btn-accent btn-circle mx-1"
                 // Add social login functionality
               >
-                <i className="fab fa-facebook-f"></i>
-              </button>
-              <button
-                type="button"
-                className="btn btn-accent btn-circle mx-1"
-                // Add social login functionality
-              >
-                <i className="fab fa-twitter"></i>
-              </button>
-              <button
-                type="button"
-                className="btn btn-accent btn-circle mx-1"
-                // Add social login functionality
-              >
-                <i className="fab fa-google"></i>
+                <FaGoogle></FaGoogle>
               </button>
             </div>
           </div>
