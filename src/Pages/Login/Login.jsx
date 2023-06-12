@@ -1,19 +1,47 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import useAuth from "../../hooks/useAuth";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState("");
+  const { signIn } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
 
   const handleTogglePassword = () => {
     setShowPassword(!showPassword);
+  };
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    signIn(email, password)
+      .then((userCredential) => {
+        setError("");
+        // Signed in
+        const user = userCredential.user;
+        // ...
+        console.log(user);
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        setError(errorMessage);
+      });
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="max-w-md w-full p-6 space-y-6 bg-white rounded-lg shadow-lg">
         <h2 className="text-2xl font-bold text-center">Login</h2>
-        <form className="space-y-4">
+        <form onSubmit={handleLogin} className="space-y-4">
           <div>
             <label
               htmlFor="email"
@@ -23,6 +51,7 @@ const Login = () => {
             </label>
             <input
               id="email"
+              name="email"
               type="email"
               className="input input-bordered w-full"
               placeholder="Enter your email"
@@ -38,6 +67,7 @@ const Login = () => {
             <div className="flex items-center">
               <input
                 id="password"
+                name="password"
                 type={showPassword ? "text" : "password"}
                 className="input input-bordered w-full pr-10"
                 placeholder="Enter your password"
@@ -91,6 +121,7 @@ const Login = () => {
             </div>
           </div>
         </form>
+        {error && <p className="text-red-600">{error}</p>}
       </div>
     </div>
   );
