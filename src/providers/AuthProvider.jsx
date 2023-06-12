@@ -30,7 +30,7 @@ const AuthProvider = ({ children }) => {
         // get and set token
 
         axios
-          .post("http://localhost:5000/", {
+          .post("http://localhost:5000/jwt", {
             email: user.email,
           })
           .then((data) => {

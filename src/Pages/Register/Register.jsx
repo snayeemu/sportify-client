@@ -61,6 +61,22 @@ const Register = () => {
             // Profile updated!
             // ...
 
+            const saveUser = { name: name, email: email };
+
+            fetch("http://localhost:5000/users", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(saveUser),
+            })
+              .then((res) => res.json())
+              .then((data) => {
+                if (data.insertedId) navigate("/");
+              });
+
+            form.reset();
+
             navigate("/");
           })
           .catch((error) => {
