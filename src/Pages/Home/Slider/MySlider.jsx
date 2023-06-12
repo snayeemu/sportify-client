@@ -14,7 +14,7 @@ export default class SimpleSlider extends Component {
       slidesToScroll: 1,
     };
     return (
-      <div className="md:mb-16">
+      <div className="md:mb-40">
         <Slider {...settings}>
           <div className="slider-1 md:h-[90vh] py-5  text-center  bg-black bg-opacity-50 bg-blend-multiply">
             <h1 className="text-3xl md:text-6xl relative top-1/3 text-yellow-600">
@@ -22,7 +22,7 @@ export default class SimpleSlider extends Component {
               Camp!
             </h1>
           </div>
-          <div className="slider-1 md:h-[90vh] py-5  text-center  bg-black bg-opacity-50 bg-blend-multiply">
+          <div className="slider-2 md:h-[90vh] py-5  text-center  bg-black bg-opacity-50 bg-blend-multiply">
             <h1 className="text-3xl md:text-6xl relative top-1/3 text-yellow-600">
               Embrace the Spirit of Sportsmanship and Teamwork at our Summer
               Camp!
