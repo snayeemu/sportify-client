@@ -7,6 +7,8 @@ const Footer = () => {
         <div className="mb-4 md:mb-0">
           <h2 className="text-xl font-bold">Sportify Summer Camp</h2>
           <p className="mt-2">1234 Main Street, City, State, ZIP</p>
+          <p className="mt-2">Phone: 123-456-7890</p>
+          <p className="mt-2">Email: info@sportify.com</p>
         </div>
         <nav className="flex space-x-4">
           <Link to="/" className="hover:text-gray-300">
@@ -22,6 +24,12 @@ const Footer = () => {
             Contact
           </Link>
         </nav>
+      </div>
+      <div className="mt-8 text-center">
+        <p className="text-sm">
+          &copy; {new Date().getFullYear()} Sportify Summer Camp. All rights
+          reserved.
+        </p>
       </div>
     </footer>
   );
