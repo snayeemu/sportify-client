@@ -11,7 +11,6 @@ const PopularClasses = () => {
         setPopularClasses(popularClasses);
       });
   }, []);
-  console.log(popularClasses);
 
   return (
     <div className="my-40">
