@@ -1,16 +1,14 @@
 import { useEffect, useState } from "react";
+import useInstructor from "../../../hooks/useInstructor";
 
 const PopularInstructors = () => {
   const [popularInstructors, setPopularInstructors] = useState([]);
+  const allInstructors = useInstructor();
 
   useEffect(() => {
-    fetch("http://localhost:5000/allInstructors")
-      .then((res) => res.json())
-      .then((allInstructors) => {
-        const popularInstructors = allInstructors.slice(0, 6);
-        setPopularInstructors(popularInstructors);
-      });
-  }, []);
+    const popularInstructors = allInstructors.slice(0, 6);
+    setPopularInstructors(popularInstructors);
+  }, [allInstructors]);
 
   return (
     <div className="my-40">
