@@ -45,7 +45,11 @@ const Login = () => {
         // IdP data available using getAdditionalUserInfo(result)
         // ...
         console.log(user);
-        const toSave = { name: user.displayName, email: user.email };
+        const toSave = {
+          name: user.displayName,
+          email: user.email,
+          image: user.photoURL,
+        };
         fetch("http://localhost:5000/users", {
           method: "POST",
           headers: {

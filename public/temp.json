@@ -1,72 +1,8 @@
 [
   {
-    "className": "Basketball Camp",
-    "classImage": "https://images.unsplash.com/photo-1546519638-68e109498ffc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1190&q=80",
-    "price": 99.99,
-    "availableSeat": 20,
-    "studentEnrolled": 15
-  },
-  {
-    "className": "Soccer Clinic",
-    "classImage": "https://images.unsplash.com/photo-1551958219-acbc608c6377?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-    "price": 79.99,
-    "availableSeat": 15,
-    "studentEnrolled": 10
-  },
-  {
-    "className": "Swimming Lessons",
-    "classImage": "https://images.unsplash.com/photo-1529250998-f63edc32300c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-    "price": 49.99,
-    "availableSeat": 10,
-    "studentEnrolled": 8
-  },
-  {
-    "className": "Tennis Camp",
-    "classImage": "https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-    "price": 89.99,
-    "availableSeat": 12,
-    "studentEnrolled": 9
-  },
-  {
-    "className": "Volleyball Training",
-    "classImage": "https://images.unsplash.com/photo-1592656094267-764a45160876?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-    "price": 69.99,
-    "availableSeat": 18,
-    "studentEnrolled": 14
-  },
-  {
-    "className": "Gymnastics Workshop",
-    "classImage": "https://images.unsplash.com/photo-1596357395217-80de13130e92?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80",
-    "price": 59.99,
-    "availableSeat": 8,
-    "studentEnrolled": 6
-  },
-  {
-    "className": "Baseball Camp",
-    "classImage": "https://images.unsplash.com/photo-1529768167801-9173d94c2a42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-    "price": 79.99,
-    "availableSeat": 15,
-    "studentEnrolled": 11
-  },
-  {
-    "className": "Golf Lessons",
-    "classImage": "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-    "price": 69.99,
-    "availableSeat": 10,
-    "studentEnrolled": 7
-  },
-  {
-    "className": "Archery Workshop",
-    "classImage": "https://images.unsplash.com/photo-1510925751334-0fe90906839b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=393&q=80",
-    "price": 59.99,
-    "availableSeat": 8,
-    "studentEnrolled": 5
-  },
-  {
-    "className": "Track and Field Training",
-    "classImage": "https://images.unsplash.com/photo-1582893523490-dd68ebc7884e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=871&q=80",
-    "price": 69.99,
-    "availableSeat": 12,
-    "studentEnrolled": 10
+    "name": "Sarah Khan",
+    "email": "sarah@khan.com",
+    "isInstructor": true,
+    "image": "https://images.unsplash.com/photo-1601397217569-d2413068e508?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=464&q=80"
   }
 ]

@@ -61,7 +61,7 @@ const Register = () => {
             // Profile updated!
             // ...
 
-            const saveUser = { name: name, email: email };
+            const saveUser = { name: name, email: email, image: photoURL };
 
             fetch("http://localhost:5000/users", {
               method: "POST",

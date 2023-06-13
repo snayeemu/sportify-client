@@ -37,6 +37,9 @@ const NavBar = () => {
             <Link to={"/dashboard"}>Dashboard</Link>
           </li>
           <li>
+            <img className="btn  " src={user.photoURL} alt="" />
+          </li>
+          <li>
             <button className="btn btn-ghost" onClick={handleLogout}>
               Logout
             </button>
