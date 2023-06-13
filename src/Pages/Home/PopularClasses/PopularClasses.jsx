@@ -1,16 +1,14 @@
 import { useEffect, useState } from "react";
+import useClasses from "../../../hooks/useClasses";
 
 const PopularClasses = () => {
   const [popularClasses, setPopularClasses] = useState([]);
+  const allClasses = useClasses();
 
   useEffect(() => {
-    fetch("http://localhost:5000/allClasses")
-      .then((res) => res.json())
-      .then((allClasses) => {
-        const popularClasses = allClasses.slice(0, 6);
-        setPopularClasses(popularClasses);
-      });
-  }, []);
+    const popularClasses = allClasses.slice(0, 6);
+    setPopularClasses(popularClasses);
+  }, [allClasses]);
 
   return (
     <div className="my-40">
