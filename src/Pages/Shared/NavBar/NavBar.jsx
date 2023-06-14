@@ -20,7 +20,6 @@ const NavBar = () => {
       });
   };
 
-
   const navOpt = (
     <>
       <li>
@@ -31,9 +30,6 @@ const NavBar = () => {
       </li>
       <li>
         <Link to={"/classes"}>Classes</Link>
-      </li>
-      <li>
-        <Link to={"/secret"}>Secret</Link>
       </li>
 
       {user ? (
