@@ -29,7 +29,9 @@ const AdminDashboard = () => {
             <ul className="menu menu-horizontal">
               {/* Navbar menu content here */}
               <li>
-                <Link to={"/dashboard/instructor/myClasses"}>My Classes</Link>
+                <Link to={"/dashboard/admin/dashboard/manageUsers"}>
+                  Manage Users
+                </Link>
               </li>
               {/* <li>
                 <a>Navbar Item 2</a>

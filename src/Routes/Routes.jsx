@@ -3,6 +3,7 @@ import Main from "../Layouts/Main";
 import Classes from "../Pages/Classes/Classes";
 import AdminDashboard from "../Pages/Dashboard/AdminDashboard/AdminDashboard";
 import ManageClass from "../Pages/Dashboard/AdminDashboard/ManageClass/ManageClass";
+import ManageUsers from "../Pages/Dashboard/AdminDashboard/ManageUsers/ManageUsers";
 import AddClass from "../Pages/Dashboard/UserDashboard/InstructorDashboard/AddClass/AddClass";
 import InstructorDashboard from "../Pages/Dashboard/UserDashboard/InstructorDashboard/InstructorDashboard/InstructorDashboard";
 import MyClass from "../Pages/Dashboard/UserDashboard/InstructorDashboard/MyClass/MyClass";
@@ -90,6 +91,10 @@ const router = createBrowserRouter([
           {
             path: "/dashboard/admin",
             element: <ManageClass></ManageClass>,
+          },
+          {
+            path: "dashboard/manageUsers",
+            element: <ManageUsers></ManageUsers>,
           },
         ],
       },

@@ -57,7 +57,7 @@ const ManageClass = () => {
 
   return (
     <div className="my-40">
-      <h2 className="text-4xl">Popular Classes</h2>
+      <h2 className="text-4xl">Manage Classes</h2>
       <div className="md:grid grid-cols-3 gap-4 justify-between my-8">
         {pendingClass.map((aClass, index) => (
           <div
