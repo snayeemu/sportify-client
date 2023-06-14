@@ -10,6 +10,7 @@ import MyClass from "../Pages/Dashboard/UserDashboard/InstructorDashboard/MyClas
 import Payment from "../Pages/Dashboard/UserDashboard/Payment/Payment";
 import StudentDashboard from "../Pages/Dashboard/UserDashboard/StudentDashboard";
 import TakenClasses from "../Pages/Dashboard/UserDashboard/TakenClasses";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Home from "../Pages/Home/Home/Home";
 import Instructor from "../Pages/Instructor/Instructor";
 
@@ -99,6 +100,10 @@ const router = createBrowserRouter([
         ],
       },
     ],
+  },
+  {
+    path: "*",
+    element: <ErrorPage></ErrorPage>,
   },
 ]);
 
