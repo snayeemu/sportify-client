@@ -78,7 +78,7 @@ const CheckoutForm = ({ price, classId }) => {
       //   todo: next steps
       const payment = {
         email: user?.email,
-        callId: classId,
+        classId: classId,
         transactionId: paymentIntent.id,
         price: price,
         date: new Date(),
