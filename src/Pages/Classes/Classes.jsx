@@ -8,16 +8,22 @@ const Classes = () => {
   const { user } = useAuth();
   const allClasses = useClasses();
   const isStudent = useIsStudent();
-  const [userInfo, setUserInfo] = useState({});
 
-  useEffect(() => {
+  const [takenClass, setTakenClass] = useState([]);
+
+  const updateTakenClass = () => {
     if (user)
       fetch(`http://localhost:5000/userInfo/${user?.email}`)
         .then((res) => res.json())
         .then((data) => {
-          setUserInfo(data);
+          setTakenClass(data.takenClass);
         });
-  }, [setUserInfo, user, user?.email]);
+  };
+
+  useEffect(() => {
+    updateTakenClass();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user]);
 
   useEffect(() => {
     setPopularClasses(allClasses);
@@ -35,8 +41,8 @@ const Classes = () => {
         .then((data) => {
           if (data.modifiedCount > 0) {
             alert("Class is selected");
+            updateTakenClass();
           }
-          console.log(data);
         });
     }
   };
@@ -66,8 +72,7 @@ const Classes = () => {
                   onClick={() => handleSelectClass(aClass)}
                   disabled={
                     !isStudent ||
-                    (userInfo?.takenClass &&
-                      userInfo?.takenClass.includes(aClass._id))
+                    (takenClass && takenClass.includes(aClass._id))
                   }
                   className="btn btn-sm btn-warning"
                 >
