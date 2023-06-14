@@ -1,6 +1,6 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 
-const StudentDashboard = () => {
+const InstructorDashboard = () => {
   return (
     <div className="drawer">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
@@ -24,16 +24,16 @@ const StudentDashboard = () => {
               </svg>
             </label>
           </div>
-          <div className="flex-1 px-2 mx-2">Student Dashboard</div>
+          <div className="flex-1 px-2 mx-2">Instructor Dashboard</div>
           <div className="flex-none hidden lg:block">
             <ul className="menu menu-horizontal">
               {/* Navbar menu content here */}
-              {/* <li>
-                <a>Navbar Item 1</a>
+              <li>
+                <Link to={"/dashboard/instructor/myClasses"}>My Classes</Link>
               </li>
               <li>
                 <a>Navbar Item 2</a>
-              </li> */}
+              </li>
             </ul>
           </div>
         </div>
@@ -57,4 +57,4 @@ const StudentDashboard = () => {
   );
 };
 
-export default StudentDashboard;
+export default InstructorDashboard;

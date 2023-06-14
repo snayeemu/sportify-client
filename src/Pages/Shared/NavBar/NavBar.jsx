@@ -1,11 +1,13 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+import useIsInstructor from "../../../hooks/useIsInstructor";
 import useIsStudent from "../../../hooks/useIsStudent";
 import { AuthContext } from "../../../providers/AuthProvider";
 
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
   const isUser = useIsStudent();
+  const [aUser] = useIsInstructor();
 
   const handleLogout = () => {
     logOut()
@@ -35,9 +37,16 @@ const NavBar = () => {
 
       {user ? (
         <>
-          <li>
-            <Link to={isUser ? "/dashboard/user" : ""}>Dashboard</Link>
-          </li>
+          {isUser && (
+            <li>
+              <Link to={"/dashboard/user"}>Dashboard</Link>
+            </li>
+          )}
+          {aUser?.isInstructor && (
+            <li>
+              <Link to={"/dashboard/instructor"}>Dashboard 2</Link>
+            </li>
+          )}
           <li>
             <img className="btn  " src={user.photoURL} alt="" />
           </li>

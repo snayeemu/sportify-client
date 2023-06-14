@@ -87,7 +87,12 @@ const CheckoutForm = ({ price, classId }) => {
       };
       axiosSecure.post("/payments", payment).then((res) => {
         if (res.data.insertedId) {
-          // display confirm
+          alert("payment confirmed");
+          fetch(`http://localhost:5000/updateClass/${classId}`, {
+            method: "PATCH",
+          })
+            .then(res.json())
+            .then((data) => console.log(data));
         }
       });
     }

@@ -3,7 +3,8 @@ import useClasses from "../../../hooks/useClasses";
 
 const PopularClasses = () => {
   const [popularClasses, setPopularClasses] = useState([]);
-  const [allClasses] = useClasses();
+  const allClasses = useClasses();
+  console.log(allClasses);
 
   useEffect(() => {
     if (allClasses) {
