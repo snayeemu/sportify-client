@@ -5,6 +5,7 @@ const ManageClass = () => {
   const { user } = useAuth();
   const [pendingClass, setPendingClass] = useState([]);
   const [disable, setDisable] = useState([]);
+  const [feedback, setFeedback] = useState("");
   useEffect(() => {
     if (user)
       fetch("http://localhost:5000/allClasses")
@@ -23,8 +24,34 @@ const ManageClass = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if(data.modifiedCount > 0) alert('Approved')
+        if (data.modifiedCount > 0) alert("Approved");
         setDisable([...disable, index]);
+      });
+  };
+
+  const handleDeny = (id, index) => {
+    fetch(`http://localhost:5000/updateStatus?classId=${id}&status=denied`, {
+      method: "PATCH",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount > 0) alert("Denied");
+        setDisable([...disable, index]);
+      });
+  };
+
+  const handleFeedback = (aClass) => {
+    const feedbackInfo = { feedback, id: aClass._id };
+    fetch(`http://localhost:5000/feedback`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(feedbackInfo),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount > 0) alert("Sent");
       });
   };
 
@@ -56,12 +83,47 @@ const ManageClass = () => {
                   Approve
                 </button>
                 <button
+                  onClick={() => handleDeny(aClass._id, index)}
                   className="btn btn-warning "
                   disabled={disable.includes(index)}
                 >
                   Deny
                 </button>
-                <button className="btn btn-warning ">Send Feedback</button>
+                {/* Open the modal using ID.showModal() method */}
+                <button
+                  className="btn"
+                  onClick={() => window.my_modal_5.showModal()}
+                >
+                  Send Feedback
+                </button>
+                <dialog
+                  id="my_modal_5"
+                  className="modal modal-bottom sm:modal-middle"
+                >
+                  <form method="dialog" className="modal-box">
+                    <h3 className="font-bold text-lg">Feedback!</h3>
+                    <textarea
+                      onChange={(e) => setFeedback(e.target.value)}
+                      className="border-yellow-500 ps-2"
+                      name="feedback"
+                      value={aClass?.feedback || feedback}
+                      id=""
+                      cols="60"
+                      rows="10"
+                    ></textarea>
+
+                    <div className="modal-action">
+                      {/* if there is a button in form, it will close the modal */}
+                      <button className="btn">Close</button>
+                    </div>
+                  </form>
+                  <button
+                    onClick={() => handleFeedback(aClass)}
+                    className="btn btn-warning relative bottom-24"
+                  >
+                    Send
+                  </button>
+                </dialog>
               </div>
             </div>
           </div>

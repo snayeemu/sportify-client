@@ -36,6 +36,7 @@ const MyClass = () => {
               <p>
                 {"Instructor"}: {aClass.instructorName}
               </p>
+              <p>{aClass?.feedback && `Feedback: ${aClass?.feedback}`}</p>
               <div className="card-actions justify-end">
                 <button className="btn btn-warning ">
                   Status: {aClass?.status ? `${aClass?.status}` : "Approved"}

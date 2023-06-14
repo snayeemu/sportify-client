@@ -64,7 +64,8 @@ const Classes = () => {
       <div className="md:grid grid-cols-3 gap-4 justify-between my-8">
         {allClasses.map(
           (aClass) =>
-            aClass.status !== "pending" && (
+            aClass.status !== "pending" &&
+            aClass.status !== "denied" && (
               <div
                 key={aClass._id}
                 className="card bg-black text-white bg-opacity-80 w-96  shadow-xl"
