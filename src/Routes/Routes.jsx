@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layouts/Main";
 import Classes from "../Pages/Classes/Classes";
 import StudentDashboard from "../Pages/Dashboard/UserDashboard/StudentDashboard";
+import TakenClasses from "../Pages/Dashboard/UserDashboard/TakenClasses";
 import Home from "../Pages/Home/Home/Home";
 import Instructor from "../Pages/Instructor/Instructor";
 
@@ -41,6 +42,12 @@ const router = createBrowserRouter([
             <StudentDashboard></StudentDashboard>
           </StudentRoute>
         ),
+        children: [
+          {
+            path: "/dashboard/user",
+            element: <TakenClasses></TakenClasses>,
+          },
+        ],
       },
     ],
   },

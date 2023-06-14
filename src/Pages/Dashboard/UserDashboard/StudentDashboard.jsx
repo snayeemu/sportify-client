@@ -1,3 +1,5 @@
+import { Outlet } from "react-router-dom";
+
 const StudentDashboard = () => {
   return (
     <div className="drawer">
@@ -37,6 +39,7 @@ const StudentDashboard = () => {
         </div>
         {/* Page content here */}
         Content
+        <Outlet></Outlet>
       </div>
       <div className="drawer-side">
         <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
