@@ -15,7 +15,7 @@ const MyClass = () => {
           setMyClasses(myClasses);
         });
   }, [user]);
-//   console.log(myClasses);
+  //   console.log(myClasses);
 
   return (
     <div className="my-40">
@@ -37,7 +37,7 @@ const MyClass = () => {
                 {"Instructor"}: {aClass.instructorName}
               </p>
               <div className="card-actions justify-end">
-                <button className="btn btn-warning hover:hidden">
+                <button className="btn btn-warning ">
                   Status: {aClass?.status ? `${aClass?.status}` : "Approved"}
                 </button>
               </div>

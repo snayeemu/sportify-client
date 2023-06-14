@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layouts/Main";
 import Classes from "../Pages/Classes/Classes";
+import AdminDashboard from "../Pages/Dashboard/AdminDashboard/AdminDashboard";
 import AddClass from "../Pages/Dashboard/UserDashboard/InstructorDashboard/AddClass/AddClass";
 import InstructorDashboard from "../Pages/Dashboard/UserDashboard/InstructorDashboard/InstructorDashboard/InstructorDashboard";
 import MyClass from "../Pages/Dashboard/UserDashboard/InstructorDashboard/MyClass/MyClass";
@@ -12,6 +13,7 @@ import Instructor from "../Pages/Instructor/Instructor";
 
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
+import AdminRoutes from "./AdminRoutes";
 import InstructorRoute from "./InstructorRoute";
 import StudentRoute from "./StudentRoute";
 
@@ -75,6 +77,14 @@ const router = createBrowserRouter([
             element: <MyClass></MyClass>,
           },
         ],
+      },
+      {
+        path: "/dashboard/admin",
+        element: (
+          <AdminRoutes>
+            <AdminDashboard></AdminDashboard>
+          </AdminRoutes>
+        ),
       },
     ],
   },

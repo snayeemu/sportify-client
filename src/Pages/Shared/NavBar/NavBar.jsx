@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import useIsInstructor from "../../../hooks/useIsInstructor";
+import useIsInstructor from "../../../hooks/useIsAdminOrInstructor";
 import useIsStudent from "../../../hooks/useIsStudent";
 import { AuthContext } from "../../../providers/AuthProvider";
 
@@ -19,6 +19,7 @@ const NavBar = () => {
         console.log(error);
       });
   };
+
 
   const navOpt = (
     <>
@@ -39,12 +40,17 @@ const NavBar = () => {
         <>
           {isUser && (
             <li>
-              <Link to={"/dashboard/user"}>Dashboard</Link>
+              <Link to={"/dashboard/user"}>Student-Dashboard</Link>
             </li>
           )}
           {aUser?.isInstructor && (
             <li>
-              <Link to={"/dashboard/instructor"}>Dashboard 2</Link>
+              <Link to={"/dashboard/instructor"}>Instructor-Dashboard</Link>
+            </li>
+          )}
+          {aUser?.isAdmin && (
+            <li>
+              <Link to={"/dashboard/admin"}>Admin-Dashboard</Link>
             </li>
           )}
           <li>
