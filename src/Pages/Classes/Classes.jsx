@@ -1,13 +1,45 @@
 import { useEffect, useState } from "react";
+import useAuth from "../../hooks/useAuth";
 import useClasses from "../../hooks/useClasses";
+import useIsStudent from "../../hooks/useIsStudent";
 
 const Classes = () => {
   const [popularClasses, setPopularClasses] = useState([]);
+  const { user } = useAuth();
   const allClasses = useClasses();
+  const isStudent = useIsStudent();
+  const [userInfo, setUserInfo] = useState({});
+
+  useEffect(() => {
+    if (user)
+      fetch(`http://localhost:5000/userInfo/${user?.email}`)
+        .then((res) => res.json())
+        .then((data) => {
+          setUserInfo(data);
+        });
+  }, [setUserInfo, user, user?.email]);
 
   useEffect(() => {
     setPopularClasses(allClasses);
   }, [allClasses]);
+
+  const handleSelectClass = (aClass) => {
+    if (user) {
+      fetch(
+        `http://localhost:5000/addClass?classId=${aClass?._id}&userEmail=${user?.email}`,
+        {
+          method: "PATCH",
+        }
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.modifiedCount > 0) {
+            alert("Class is selected");
+          }
+          console.log(data);
+        });
+    }
+  };
 
   return (
     <div className="my-40">
@@ -30,7 +62,17 @@ const Classes = () => {
               <p>Available Seats: {aClass.availableSeat}</p>
               <p>Price: ${aClass.price}</p>
               <div className="card-actions justify-end">
-                <button className="btn btn-sm btn-warning">Select</button>
+                <button
+                  onClick={() => handleSelectClass(aClass)}
+                  disabled={
+                    !isStudent ||
+                    (userInfo?.takenClass &&
+                      userInfo?.takenClass.includes(aClass._id))
+                  }
+                  className="btn btn-sm btn-warning"
+                >
+                  Select
+                </button>
               </div>
             </div>
           </div>
