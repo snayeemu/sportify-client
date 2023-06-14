@@ -4,9 +4,9 @@ import useClasses from "../../hooks/useClasses";
 import useIsStudent from "../../hooks/useIsStudent";
 
 const Classes = () => {
-  const [popularClasses, setPopularClasses] = useState([]);
+  // const [allClasses, setPopularClasses] = useState([]);
   const { user } = useAuth();
-  const allClasses = useClasses();
+  const [allClasses, refetch] = useClasses();
   const isStudent = useIsStudent();
 
   const [takenClass, setTakenClass] = useState([]);
@@ -20,14 +20,26 @@ const Classes = () => {
         });
   };
 
+  const updateAvailable = (id) => {
+    if (user)
+      fetch(`http://localhost:5000/updateClass/${id}`, {
+        method: "PATCH",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          refetch();
+        });
+  };
+
   useEffect(() => {
     updateTakenClass();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
-  useEffect(() => {
-    setPopularClasses(allClasses);
-  }, [allClasses]);
+  // useEffect(() => {
+  //   setPopularClasses(allClasses);
+  // }, []);
 
   const handleSelectClass = (aClass) => {
     if (user) {
@@ -42,6 +54,7 @@ const Classes = () => {
           if (data.modifiedCount > 0) {
             alert("Class is selected");
             updateTakenClass();
+            updateAvailable(aClass._id);
           }
         });
     }
@@ -51,7 +64,7 @@ const Classes = () => {
     <div className="my-40">
       <h2 className="text-4xl">Our Classes</h2>
       <div className="md:grid grid-cols-3 gap-4 justify-between my-8">
-        {popularClasses.map((aClass) => (
+        {allClasses.map((aClass) => (
           <div
             key={aClass._id}
             className="card bg-black text-white bg-opacity-80 w-96  shadow-xl"

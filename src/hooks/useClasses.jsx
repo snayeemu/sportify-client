@@ -1,16 +1,23 @@
-import { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import useAuth from "./useAuth";
 
 const useClasses = () => {
-  const [classes, setClasses] = useState([]);
+  const { loading } = useAuth();
 
-  useEffect(() => {
-    fetch("http://localhost:5000/allClasses")
-      .then((res) => res.json())
-      .then((allClasses) => {
-        setClasses(allClasses);
-      });
-  }, []);
-  return classes;
+  const {
+    data: classes = [],
+    isLoading: classLoading,
+    refetch,
+  } = useQuery({
+    queryKey: ["menu"],
+    enabled: !loading,
+    queryFn: async () => {
+      const res = await fetch("http://localhost:5000/allClasses");
+      return res.json();
+    },
+  });
+
+  return [classes, refetch, classLoading];
 };
 
 export default useClasses;
