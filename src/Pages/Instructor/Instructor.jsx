@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import useInstructor from "../../hooks/useInstructor";
 
-const PopularInstructors = () => {
+const Instructor = () => {
   const [popularInstructors, setPopularInstructors] = useState([]);
   const allInstructors = useInstructor();
 
@@ -35,4 +35,4 @@ const PopularInstructors = () => {
   );
 };
 
-export default PopularInstructors;
+export default Instructor;
