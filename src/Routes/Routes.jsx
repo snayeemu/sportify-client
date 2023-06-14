@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layouts/Main";
 import Classes from "../Pages/Classes/Classes";
 import AdminDashboard from "../Pages/Dashboard/AdminDashboard/AdminDashboard";
+import ManageClass from "../Pages/Dashboard/AdminDashboard/ManageClass/ManageClass";
 import AddClass from "../Pages/Dashboard/UserDashboard/InstructorDashboard/AddClass/AddClass";
 import InstructorDashboard from "../Pages/Dashboard/UserDashboard/InstructorDashboard/InstructorDashboard/InstructorDashboard";
 import MyClass from "../Pages/Dashboard/UserDashboard/InstructorDashboard/MyClass/MyClass";
@@ -85,6 +86,12 @@ const router = createBrowserRouter([
             <AdminDashboard></AdminDashboard>
           </AdminRoutes>
         ),
+        children: [
+          {
+            path: "/dashboard/admin",
+            element: <ManageClass></ManageClass>,
+          },
+        ],
       },
     ],
   },
