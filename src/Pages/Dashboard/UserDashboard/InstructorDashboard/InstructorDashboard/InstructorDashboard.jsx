@@ -31,14 +31,13 @@ const InstructorDashboard = () => {
               <li>
                 <Link to={"/dashboard/instructor/myClasses"}>My Classes</Link>
               </li>
-              <li>
+              {/* <li>
                 <a>Navbar Item 2</a>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
         {/* Page content here */}
-        Content
         <Outlet></Outlet>
       </div>
       <div className="drawer-side">

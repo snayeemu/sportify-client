@@ -15,7 +15,7 @@ const MyClass = () => {
           setMyClasses(myClasses);
         });
   }, [user]);
-  console.log(myClasses);
+//   console.log(myClasses);
 
   return (
     <div className="my-40">
@@ -31,7 +31,8 @@ const MyClass = () => {
             </figure>
             <div className="card-body">
               <h2 className="card-title">{aClass.className}</h2>
-              <p>Enrolled Student: {aClass.studentEnrolled}</p>
+              <p>Enrolled Students: {aClass.studentEnrolled}</p>
+              <p>Available Seats: {aClass.availableSeat}</p>
               <p>
                 {"Instructor"}: {aClass.instructorName}
               </p>
