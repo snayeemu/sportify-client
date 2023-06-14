@@ -75,7 +75,7 @@ const CheckoutForm = ({ price, classId }) => {
     setProcessing(false);
     if (paymentIntent.status === "succeeded") {
       setTransactionId(paymentIntent.id);
-      //   todo: next steps
+
       const payment = {
         email: user?.email,
         classId: classId,
@@ -86,13 +86,17 @@ const CheckoutForm = ({ price, classId }) => {
         status: "confirmed",
       };
       axiosSecure.post("/payments", payment).then((res) => {
-        if (res.data.insertedId) {
+        console.log(res.data);
+        if (res.data.insertResult.insertedId) {
           alert("payment confirmed");
           fetch(`http://localhost:5000/updateClass/${classId}`, {
             method: "PATCH",
           })
             .then(res.json())
-            .then((data) => console.log(data));
+            .then((data) => {
+              alert("Confirmed");
+              console.log(data);
+            });
         }
       });
     }

@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const TakenClasses = () => {
   const { user } = useAuth();
   const [takenClass, setTakenClass] = useState([]);
-  const [allClasses] = useClasses();
+  const allClasses = useClasses();
 
   useEffect(() => {
     if (user)
@@ -14,10 +14,12 @@ const TakenClasses = () => {
         .then((res) => res.json())
         .then((data) => {
           const selectedClasses = data.takenClass;
-          const takenClasses = allClasses.filter((aClass) =>
-            selectedClasses.includes(aClass._id)
-          );
-          setTakenClass(takenClasses);
+          if (selectedClasses) {
+            const takenClasses = allClasses.filter((aClass) =>
+              selectedClasses.includes(aClass._id)
+            );
+            setTakenClass(takenClasses);
+          }
         });
   }, [allClasses, user]);
 
