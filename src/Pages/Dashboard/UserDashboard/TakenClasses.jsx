@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import useAuth from "../../../hooks/useAuth";
 import useClasses from "../../../hooks/useClasses";
+import { Link } from "react-router-dom";
 
 const TakenClasses = () => {
   const { user } = useAuth();
@@ -73,9 +74,11 @@ const TakenClasses = () => {
                 <p>Available Seats: {aClass.availableSeat}</p>
                 <p>Price: ${aClass.price}</p>
                 <div className="card-actions justify-end">
-                  <button className="btn btn-sm btn-warning hover:bg-green-600">
-                    Pay
-                  </button>
+                  <Link to={`/dashboard/user/${aClass._id}`}>
+                    <button className="btn btn-sm btn-warning hover:bg-green-600">
+                      Pay
+                    </button>
+                  </Link>
                   <button
                     onClick={() => handleDelete(aClass)}
                     className="btn btn-sm hover:bg-red-600"

@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import { useMemo } from "react";
 import useAuth from "./useAuth";
 
 const useClasses = () => {
@@ -9,15 +10,16 @@ const useClasses = () => {
     isLoading: classLoading,
     refetch,
   } = useQuery({
-    queryKey: ["menu"],
+    queryKey: ["allUsers"],
     enabled: !loading,
     queryFn: async () => {
       const res = await fetch("http://localhost:5000/allClasses");
       return res.json();
     },
   });
+  const memoizedClasses = useMemo(() => classes, [classes]);
 
-  return [classes, refetch, classLoading];
+  return [memoizedClasses, refetch, classLoading];
 };
 
 export default useClasses;

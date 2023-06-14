@@ -3,11 +3,13 @@ import useClasses from "../../../hooks/useClasses";
 
 const PopularClasses = () => {
   const [popularClasses, setPopularClasses] = useState([]);
-  const allClasses = useClasses();
+  const [allClasses] = useClasses();
 
   useEffect(() => {
-    const popularClasses = allClasses.slice(0, 6);
-    setPopularClasses(popularClasses);
+    if (allClasses) {
+      const popularClasses = allClasses.slice(0, 6);
+      setPopularClasses(popularClasses);
+    }
   }, [allClasses]);
 
   return (

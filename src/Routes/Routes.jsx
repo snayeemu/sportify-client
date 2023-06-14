@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layouts/Main";
 import Classes from "../Pages/Classes/Classes";
+import Payment from "../Pages/Dashboard/UserDashboard/Payment/Payment";
 import StudentDashboard from "../Pages/Dashboard/UserDashboard/StudentDashboard";
 import TakenClasses from "../Pages/Dashboard/UserDashboard/TakenClasses";
 import Home from "../Pages/Home/Home/Home";
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
           {
             path: "/dashboard/user",
             element: <TakenClasses></TakenClasses>,
+          },
+          {
+            path: "/dashboard/user/:id",
+            element: <Payment></Payment>
           },
         ],
       },
