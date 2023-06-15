@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 
 const StudentDashboard = () => {
   return (
@@ -28,12 +28,14 @@ const StudentDashboard = () => {
           <div className="flex-none hidden lg:block">
             <ul className="menu menu-horizontal">
               {/* Navbar menu content here */}
-              {/* <li>
-                <a>Navbar Item 1</a>
+              <li>
+                <Link to={"/dashboard/user/enrolledClasses"}>
+                  My Enrolled Classes
+                </Link>
               </li>
               <li>
                 <a>Navbar Item 2</a>
-              </li> */}
+              </li>
             </ul>
           </div>
         </div>

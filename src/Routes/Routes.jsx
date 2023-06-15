@@ -5,6 +5,7 @@ import AdminDashboard from "../Pages/Dashboard/AdminDashboard/AdminDashboard";
 import ManageClass from "../Pages/Dashboard/AdminDashboard/ManageClass/ManageClass";
 import ManageUsers from "../Pages/Dashboard/AdminDashboard/ManageUsers/ManageUsers";
 import AddClass from "../Pages/Dashboard/UserDashboard/InstructorDashboard/AddClass/AddClass";
+import EnrolledClasses from "../Pages/Dashboard/UserDashboard/InstructorDashboard/InstructorDashboard/EnrolledClasses/EnrolledClasses";
 import InstructorDashboard from "../Pages/Dashboard/UserDashboard/InstructorDashboard/InstructorDashboard/InstructorDashboard";
 import MyClass from "../Pages/Dashboard/UserDashboard/InstructorDashboard/MyClass/MyClass";
 import Payment from "../Pages/Dashboard/UserDashboard/Payment/Payment";
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
             path: "/dashboard/user/:id",
             element: <Payment></Payment>,
           },
+          {
+            path: '/dashboard/user/enrolledClasses',
+            element: <EnrolledClasses></EnrolledClasses>
+          }
         ],
       },
       {
