@@ -34,7 +34,9 @@ const StudentDashboard = () => {
                 </Link>
               </li>
               <li>
-                <a>Navbar Item 2</a>
+              <Link to={"/dashboard/user/paymentHistory"}>
+                  Payment History
+                </Link>
               </li>
             </ul>
           </div>

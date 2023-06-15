@@ -9,6 +9,7 @@ import EnrolledClasses from "../Pages/Dashboard/UserDashboard/InstructorDashboar
 import InstructorDashboard from "../Pages/Dashboard/UserDashboard/InstructorDashboard/InstructorDashboard/InstructorDashboard";
 import MyClass from "../Pages/Dashboard/UserDashboard/InstructorDashboard/MyClass/MyClass";
 import Payment from "../Pages/Dashboard/UserDashboard/Payment/Payment";
+import PaymentHistory from "../Pages/Dashboard/UserDashboard/PaymetHistory/PaymentHistory";
 import StudentDashboard from "../Pages/Dashboard/UserDashboard/StudentDashboard";
 import TakenClasses from "../Pages/Dashboard/UserDashboard/TakenClasses";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
@@ -63,9 +64,13 @@ const router = createBrowserRouter([
             element: <Payment></Payment>,
           },
           {
-            path: '/dashboard/user/enrolledClasses',
-            element: <EnrolledClasses></EnrolledClasses>
-          }
+            path: "/dashboard/user/enrolledClasses",
+            element: <EnrolledClasses></EnrolledClasses>,
+          },
+          {
+            path: "/dashboard/user/paymentHistory",
+            element: <PaymentHistory></PaymentHistory>,
+          },
         ],
       },
       {
