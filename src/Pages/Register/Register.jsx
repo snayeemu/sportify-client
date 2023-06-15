@@ -1,10 +1,14 @@
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import { FaGoogle } from "react-icons/fa";
+import useAuth from "../../hooks/useAuth";
 
 const Register = () => {
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
+  const { googleSignIn } = useAuth();
+
   const navigate = useNavigate();
   const { createUser, updateUserProfile } = useContext(AuthContext);
 
@@ -88,6 +92,39 @@ const Register = () => {
       .catch((error) => {
         const errorMessage = error.message;
         // ..
+        console.log(errorMessage);
+      });
+  };
+
+  const handleGoogleLogin = () => {
+    googleSignIn()
+      .then((result) => {
+        // The signed-in user info.
+        const user = result.user;
+        // IdP data available using getAdditionalUserInfo(result)
+        // ...
+        console.log(user);
+        const toSave = {
+          name: user.displayName,
+          email: user.email,
+          image: user.photoURL,
+        };
+        fetch("https://summer-camp-server-two-delta.vercel.app/users", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(toSave),
+        })
+          .then((res) => res.json())
+          .then(() => {
+            navigate("/");
+          });
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        const errorMessage = error.message;
+        // ...
         console.log(errorMessage);
       });
   };
@@ -184,6 +221,19 @@ const Register = () => {
             </p>
           </div>
         </form>
+        <div className="text-center">
+          <p className="text-sm text-gray-600">Or log in with:</p>
+          <div className="flex justify-center mt-1">
+            <button
+              onClick={handleGoogleLogin}
+              type="button"
+              className="btn btn-accent btn-circle mx-1"
+              // Add social login functionality
+            >
+              <FaGoogle></FaGoogle>
+            </button>
+          </div>
+        </div>
         <p className="text-red-600">{errors}</p>
       </div>
     </div>
