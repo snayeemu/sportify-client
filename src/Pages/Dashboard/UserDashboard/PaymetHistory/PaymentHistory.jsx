@@ -1,28 +1,31 @@
 import { useEffect, useState } from "react";
+import useAuth from "../../../../hooks/useAuth";
 
 const PaymentHistory = () => {
+  const { user } = useAuth();
   const [payments, setPayments] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/payments")
-      .then((res) => res.json())
-      .then((payments) => {
-        payments.sort((a, b) => {
-          const dateA = new Date(a.date);
-          const dateB = new Date(b.date);
+    if (user)
+      fetch(`http://localhost:5000/payments/${user.email}`)
+        .then((res) => res.json())
+        .then((payments) => {
+          payments.sort((a, b) => {
+            const dateA = new Date(a.date);
+            const dateB = new Date(b.date);
 
-          if (dateA < dateB) {
-            return -1;
-          } else if (dateA > dateB) {
-            return 1;
-          } else {
-            return 0;
-          }
+            if (dateA < dateB) {
+              return -1;
+            } else if (dateA > dateB) {
+              return 1;
+            } else {
+              return 0;
+            }
+          });
+          console.log(payments);
+          setPayments(payments);
         });
-        console.log(payments);
-        setPayments(payments);
-      });
-  }, []);
+  }, [user]);
 
   return (
     <div className="overflow-x-auto my-8">
