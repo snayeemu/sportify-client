@@ -14,7 +14,9 @@ const Classes = () => {
 
   const updateTakenClass = () => {
     if (user)
-      fetch(`http://localhost:5000/userInfo/${user?.email}`)
+      fetch(
+        `https://summer-camp-server-two-delta.vercel.app/userInfo/${user?.email}`
+      )
         .then((res) => res.json())
         .then((data) => {
           setEnrolledClass(data.enrolledClass);
@@ -24,7 +26,7 @@ const Classes = () => {
 
   // const updateAvailable = (id) => {
   //   if (user)
-  //     fetch(`http://localhost:5000/updateClass/${id}`, {
+  //     fetch(`https://summer-camp-server-two-delta.vercel.app/updateClass/${id}`, {
   //       method: "PATCH",
   //     })
   //       .then((res) => res.json())
@@ -45,7 +47,7 @@ const Classes = () => {
   const handleSelectClass = (aClass) => {
     if (user) {
       fetch(
-        `http://localhost:5000/addClass?classId=${aClass?._id}&userEmail=${user?.email}`,
+        `https://summer-camp-server-two-delta.vercel.app/addClass?classId=${aClass?._id}&userEmail=${user?.email}`,
         {
           method: "PATCH",
         }

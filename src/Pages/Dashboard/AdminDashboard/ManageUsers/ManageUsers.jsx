@@ -6,15 +6,18 @@ const ManageUsers = () => {
   const [instructorDisable, setInstructorDisable] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/allUsers")
+    fetch("https://summer-camp-server-two-delta.vercel.app/allUsers")
       .then((res) => res.json())
       .then((data) => setUsers(data));
   }, []);
 
   const handleMakeInstructor = (email, index) => {
-    fetch(`http://localhost:5000/makeInstructor?email=${email}`, {
-      method: "PATCH",
-    })
+    fetch(
+      `https://summer-camp-server-two-delta.vercel.app/makeInstructor?email=${email}`,
+      {
+        method: "PATCH",
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -23,9 +26,12 @@ const ManageUsers = () => {
   };
 
   const handleMakeAdmin = (email, index) => {
-    fetch(`http://localhost:5000/makeAdmin?email=${email}`, {
-      method: "PATCH",
-    })
+    fetch(
+      `https://summer-camp-server-two-delta.vercel.app/makeAdmin?email=${email}`,
+      {
+        method: "PATCH",
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

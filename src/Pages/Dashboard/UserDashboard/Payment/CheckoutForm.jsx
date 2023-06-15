@@ -89,9 +89,12 @@ const CheckoutForm = ({ price, classId }) => {
         console.log(res.data);
         if (res.data.insertResult.insertedId) {
           alert("payment confirmed");
-          fetch(`http://localhost:5000/updateClass/${classId}`, {
-            method: "PATCH",
-          })
+          fetch(
+            `https://summer-camp-server-two-delta.vercel.app/updateClass/${classId}`,
+            {
+              method: "PATCH",
+            }
+          )
             .then(res.json())
             .then((data) => {
               alert("Confirmed");

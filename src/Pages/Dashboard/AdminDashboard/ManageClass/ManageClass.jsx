@@ -8,7 +8,7 @@ const ManageClass = () => {
   const [feedback, setFeedback] = useState("");
   useEffect(() => {
     if (user)
-      fetch("http://localhost:5000/allClasses")
+      fetch("https://summer-camp-server-two-delta.vercel.app/allClasses")
         .then((res) => res.json())
         .then((allClasses) => {
           const pendingClass = allClasses.filter(
@@ -19,9 +19,12 @@ const ManageClass = () => {
   }, [user]);
 
   const handleApprove = (id, index) => {
-    fetch(`http://localhost:5000/updateStatus?classId=${id}&status=approved`, {
-      method: "PATCH",
-    })
+    fetch(
+      `https://summer-camp-server-two-delta.vercel.app/updateStatus?classId=${id}&status=approved`,
+      {
+        method: "PATCH",
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) alert("Approved");
@@ -30,9 +33,12 @@ const ManageClass = () => {
   };
 
   const handleDeny = (id, index) => {
-    fetch(`http://localhost:5000/updateStatus?classId=${id}&status=denied`, {
-      method: "PATCH",
-    })
+    fetch(
+      `https://summer-camp-server-two-delta.vercel.app/updateStatus?classId=${id}&status=denied`,
+      {
+        method: "PATCH",
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) alert("Denied");
@@ -42,7 +48,7 @@ const ManageClass = () => {
 
   const handleFeedback = (aClass) => {
     const feedbackInfo = { feedback, id: aClass._id };
-    fetch(`http://localhost:5000/feedback`, {
+    fetch(`https://summer-camp-server-two-delta.vercel.app/feedback`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

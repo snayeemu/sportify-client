@@ -4,7 +4,7 @@ const useInstructor = () => {
   const [instructor, setInstructor] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/allInstructors")
+    fetch("https://summer-camp-server-two-delta.vercel.app/allInstructors")
       .then((res) => res.json())
       .then((allInstructors) => {
         setInstructor(allInstructors);

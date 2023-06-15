@@ -11,7 +11,7 @@ const Payment = () => {
 
   useEffect(() => {
     if (id) {
-      fetch(`http://localhost:5000/aClass/${id.id}`)
+      fetch(`https://summer-camp-server-two-delta.vercel.app/aClass/${id.id}`)
         .then((res) => res.json())
         .then((data) => {
           console.log(data);

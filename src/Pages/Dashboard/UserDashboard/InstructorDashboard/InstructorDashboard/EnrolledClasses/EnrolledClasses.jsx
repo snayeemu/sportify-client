@@ -7,7 +7,9 @@ const EnrolledClasses = () => {
 
   useEffect(() => {
     if (user)
-      fetch(`http://localhost:5000/classes/${user.email}`)
+      fetch(
+        `https://summer-camp-server-two-delta.vercel.app/classes/${user.email}`
+      )
         .then((res) => res.json())
         .then((classes) => {
           setEnrolledClass(classes);

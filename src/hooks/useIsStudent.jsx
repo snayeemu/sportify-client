@@ -6,7 +6,9 @@ const useIsStudent = () => {
   const [aUser, setAUser] = useState(false);
   useEffect(() => {
     if (user)
-      fetch(`http://localhost:5000/userInfo/${user.email}`)
+      fetch(
+        `https://summer-camp-server-two-delta.vercel.app/userInfo/${user.email}`
+      )
         .then((res) => res.json())
         .then((data) => setAUser(data));
   }, [user]);

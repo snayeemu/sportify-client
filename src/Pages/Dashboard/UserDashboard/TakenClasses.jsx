@@ -10,7 +10,9 @@ const TakenClasses = () => {
 
   useEffect(() => {
     if (user)
-      fetch(`http://localhost:5000/userInfo/${user?.email}`)
+      fetch(
+        `https://summer-camp-server-two-delta.vercel.app/userInfo/${user?.email}`
+      )
         .then((res) => res.json())
         .then((data) => {
           const selectedClasses = data.takenClass;
@@ -25,7 +27,9 @@ const TakenClasses = () => {
 
   const updateTakenClass = () => {
     if (user)
-      fetch(`http://localhost:5000/userInfo/${user?.email}`)
+      fetch(
+        `https://summer-camp-server-two-delta.vercel.app/userInfo/${user?.email}`
+      )
         .then((res) => res.json())
         .then((data) => {
           const selectedClasses = data.takenClass;
@@ -39,7 +43,7 @@ const TakenClasses = () => {
   const handleDelete = (aClass) => {
     if (user) {
       fetch(
-        `http://localhost:5000/deleteClass?classId=${aClass?._id}&userEmail=${user?.email}`,
+        `https://summer-camp-server-two-delta.vercel.app/deleteClass?classId=${aClass?._id}&userEmail=${user?.email}`,
         {
           method: "PATCH",
         }

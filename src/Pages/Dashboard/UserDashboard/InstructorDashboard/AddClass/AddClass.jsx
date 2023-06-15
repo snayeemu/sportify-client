@@ -22,7 +22,7 @@ const AddClass = () => {
       status: "pending",
     };
 
-    fetch("http://localhost:5000/addClass", {
+    fetch("https://summer-camp-server-two-delta.vercel.app/addClass", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -35,8 +35,6 @@ const AddClass = () => {
           alert("Inserted");
         }
       });
-
-    
   };
 
   return (

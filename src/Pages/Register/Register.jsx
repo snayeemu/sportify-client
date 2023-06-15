@@ -63,7 +63,7 @@ const Register = () => {
 
             const saveUser = { name: name, email: email, image: photoURL };
 
-            fetch("http://localhost:5000/users", {
+            fetch("https://summer-camp-server-two-delta.vercel.app/users", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",

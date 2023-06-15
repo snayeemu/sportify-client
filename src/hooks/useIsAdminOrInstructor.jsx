@@ -8,7 +8,9 @@ const useIsInstructor = () => {
     queryKey: ["allUsers"],
     enabled: !loading,
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5000/userInfo/${user.email}`);
+      const res = await fetch(
+        `https://summer-camp-server-two-delta.vercel.app/userInfo/${user.email}`
+      );
       return res.json();
     },
   });

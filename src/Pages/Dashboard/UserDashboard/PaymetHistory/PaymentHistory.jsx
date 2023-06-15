@@ -7,7 +7,9 @@ const PaymentHistory = () => {
 
   useEffect(() => {
     if (user)
-      fetch(`http://localhost:5000/payments/${user.email}`)
+      fetch(
+        `https://summer-camp-server-two-delta.vercel.app/payments/${user.email}`
+      )
         .then((res) => res.json())
         .then((payments) => {
           payments.sort((a, b) => {

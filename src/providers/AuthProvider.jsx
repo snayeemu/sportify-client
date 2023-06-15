@@ -30,7 +30,7 @@ const AuthProvider = ({ children }) => {
         // get and set token
 
         axios
-          .post("http://localhost:5000/jwt", {
+          .post("https://summer-camp-server-two-delta.vercel.app/jwt", {
             email: user.email,
           })
           .then((data) => {
