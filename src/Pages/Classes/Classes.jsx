@@ -10,12 +10,14 @@ const Classes = () => {
   const isStudent = useIsStudent();
 
   const [takenClass, setTakenClass] = useState([]);
+  const [enrolledClass, setEnrolledClass] = useState([]);
 
   const updateTakenClass = () => {
     if (user)
       fetch(`http://localhost:5000/userInfo/${user?.email}`)
         .then((res) => res.json())
         .then((data) => {
+          setEnrolledClass(data.enrolledClass);
           setTakenClass(data.takenClass);
         });
   };
@@ -86,7 +88,8 @@ const Classes = () => {
                       onClick={() => handleSelectClass(aClass)}
                       disabled={
                         !isStudent ||
-                        (takenClass && takenClass.includes(aClass._id))
+                        (takenClass && takenClass.includes(aClass._id)) ||
+                        (enrolledClass && enrolledClass.includes(aClass._id))
                       }
                       className="btn btn-sm btn-warning"
                     >
