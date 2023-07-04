@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import useIsInstructor from "../../../hooks/useIsAdminOrInstructor";
 import useIsStudent from "../../../hooks/useIsStudent";
@@ -8,6 +8,7 @@ const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
   const isUser = useIsStudent();
   const [aUser] = useIsInstructor();
+  const [isSmallDeviceNavbarOpen, setIsSmallDeviceNavbarOpen] = useState(false);
 
   const handleLogout = () => {
     logOut()
@@ -72,7 +73,13 @@ const NavBar = () => {
       <div className="navbar z-20 bg-opacity-90 bg-[#333439] white max-w-screen-xl lg:justify-between font-bold text-3xl sticky top-0">
         <div className="navbar-start ">
           <div className="dropdown">
-            <label tabIndex={0} className="btn btn-ghost lg:hidden">
+            <label
+              tabIndex={0}
+              className="btn btn-ghost lg:hidden"
+              onClick={() =>
+                setIsSmallDeviceNavbarOpen(!isSmallDeviceNavbarOpen)
+              }
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -90,7 +97,9 @@ const NavBar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 "
+              className={`${
+                isSmallDeviceNavbarOpen ? "block" : "hidden"
+              } menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52`}
             >
               {navOpt}
             </ul>
