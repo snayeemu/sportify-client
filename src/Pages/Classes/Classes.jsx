@@ -65,7 +65,7 @@ const Classes = () => {
   return (
     <div className="my-40">
       <h2 className="text-4xl">Our Classes</h2>
-      <div className="md:grid grid-cols-3 gap-4 justify-between my-8">
+      <div className="flex flex-wrap gap-4 justify-center my-8">
         {allClasses.map(
           (aClass) =>
             aClass.status !== "pending" &&
@@ -75,7 +75,11 @@ const Classes = () => {
                 className="card bg-black text-white bg-opacity-80 w-96  shadow-xl"
               >
                 <figure>
-                  <img src={aClass.classImage} alt="Shoes" />
+                  <img
+                    src={aClass.classImage}
+                    alt="Shoes"
+                    className="w-[70%] mt-4 rounded-xl"
+                  />
                 </figure>
                 <div className="card-body">
                   <h2 className="card-title">{aClass.className}</h2>
