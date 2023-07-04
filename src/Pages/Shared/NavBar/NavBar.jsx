@@ -69,7 +69,7 @@ const NavBar = () => {
   );
   return (
     <>
-      <div className="navbar z-10 bg-opacity-90 bg-[#333439] text-white max-w-screen-xl lg:justify-between font-bold text-3xl">
+      <div className="navbar z-20 bg-opacity-90 bg-[#333439] white max-w-screen-xl lg:justify-between font-bold text-3xl sticky top-0">
         <div className="navbar-start ">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -90,7 +90,7 @@ const NavBar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 "
             >
               {navOpt}
             </ul>
@@ -101,7 +101,7 @@ const NavBar = () => {
             </span>
           </a>
         </div>
-        <div className="navbar-center hidden lg:flex ">
+        <div className="navbar-center hidden lg:flex text-white">
           <ul className="menu menu-horizontal px-1">{navOpt}</ul>
         </div>
       </div>
