@@ -99,7 +99,7 @@ const NavBar = () => {
               tabIndex={0}
               className={`${
                 isSmallDeviceNavbarOpen ? "block" : "hidden"
-              } menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52`}
+              } menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 flex gap-5`}
             >
               {navOpt}
             </ul>
