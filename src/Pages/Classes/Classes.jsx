@@ -64,7 +64,7 @@ const Classes = () => {
 
   return (
     <div className="my-40">
-      <h2 className="text-4xl">Our Classes</h2>
+      <h2 className="text-4xl text-white ps-5 xl:ps-0">Our Classes</h2>
       <div className="flex flex-wrap gap-4 justify-center my-8">
         {allClasses.map(
           (aClass) =>
@@ -97,7 +97,7 @@ const Classes = () => {
                         (takenClass && takenClass.includes(aClass._id)) ||
                         (enrolledClass && enrolledClass.includes(aClass._id))
                       }
-                      className="btn btn-sm btn-warning"
+                      className="btn btn-sm btn-warning bg-cyan-900 border-cyan-950 text-cyan-500"
                     >
                       Select
                     </button>

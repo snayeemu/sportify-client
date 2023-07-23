@@ -5,7 +5,7 @@ import SimpleSlider from "../Slider/MySlider";
 
 const Home = () => {
   return (
-    <div>
+    <div className="text-white">
       <SimpleSlider></SimpleSlider>
       <PopularClasses></PopularClasses>
       <PopularInstructors></PopularInstructors>

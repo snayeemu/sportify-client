@@ -4,16 +4,16 @@ const InstructorDashboard = () => {
   return (
     <div className="drawer">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content flex flex-col">
+      <div className="drawer-content flex flex-col ">
         {/* Navbar */}
-        <div className="w-full navbar bg-base-300">
+        <div className="w-full navbar bg-gradient-to-r from-slate-900 via-black to-slate-700">
           <div className="flex-none lg:hidden">
             <label htmlFor="my-drawer-3" className="btn btn-square btn-ghost">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                className="inline-block w-6 h-6 stroke-current"
+                className="inline-block w-6 h-6 stroke-current text-white"
               >
                 <path
                   strokeLinecap="round"
@@ -24,7 +24,9 @@ const InstructorDashboard = () => {
               </svg>
             </label>
           </div>
-          <div className="flex-1 px-2 mx-2">Instructor Dashboard</div>
+          <div className="flex-1 px-2 mx-2 text-white">
+            Instructor Dashboard
+          </div>
           <div className="flex-none hidden lg:block">
             <ul className="menu menu-horizontal">
               {/* Navbar menu content here */}

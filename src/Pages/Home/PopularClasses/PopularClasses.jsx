@@ -15,11 +15,11 @@ const PopularClasses = () => {
 
   return (
     <div className="my-40">
-      <h2 className="text-4xl">Popular Classes</h2>
+      <h2 className="text-4xl ms-5 xl:ms-0">Popular Classes</h2>
       <div className="flex flex-wrap  gap-4 justify-center my-8">
         {popularClasses.map((aClass) => (
           <div
-            key={aClass._id}
+            key={aClass._idp}
             className="card bg-black text-white bg-opacity-80 w-96  shadow-xl"
           >
             <figure>

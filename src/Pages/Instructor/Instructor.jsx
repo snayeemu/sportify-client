@@ -11,7 +11,7 @@ const Instructor = () => {
 
   return (
     <div className="my-40">
-      <h2 className="text-4xl">Our Instructors</h2>
+      <h2 className="text-4xl text-white">Our Instructors</h2>
       <div className="flex flex-wrap gap-4 justify-center my-8">
         {popularInstructors.map((instructor) => (
           <div
