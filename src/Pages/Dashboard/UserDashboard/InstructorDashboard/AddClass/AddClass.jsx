@@ -18,7 +18,7 @@ const AddClass = () => {
       availableSeat: availableSeats,
       studentEnrolled: 0,
       instructorName: loggedInUser.displayName,
-      email: loggedInUser.email,
+      email: loggedInUser?.email,
       status: "pending",
     };
 
