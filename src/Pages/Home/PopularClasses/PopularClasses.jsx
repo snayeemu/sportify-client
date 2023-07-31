@@ -21,7 +21,7 @@ const PopularClasses = () => {
         {popularClasses.map((aClass) => (
           <div
             key={aClass._id}
-            className="w-[90%] md:max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-slate-700 mx-auto dark:hover:bg-slate-800 hover:shadow-2xl hover:scale-[0.98] hover:-rotate-2 duration-500"
+            className="w-[90%] md:w-full md:max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-slate-700 mx-auto dark:hover:bg-slate-800 hover:shadow-2xl hover:scale-[0.98] hover:-rotate-2 duration-500"
           >
             <img
               className="rounded-t-lg h-[250px] w-full"
