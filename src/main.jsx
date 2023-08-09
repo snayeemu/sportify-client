@@ -12,7 +12,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
         <div className="bg-slate-950 overflow-x-hidden">
-          <div className="max-w-screen-xl mx-auto">
+          <div className="mx-auto">
             <RouterProvider router={router} />
           </div>
         </div>

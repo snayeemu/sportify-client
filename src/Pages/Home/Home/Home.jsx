@@ -9,9 +9,11 @@ const Home = () => {
   return (
     <div className="text-white">
       <MySlider />
-      <PopularClasses></PopularClasses>
-      <Gallery />
-      <PopularInstructors></PopularInstructors>
+      <div className="max-w-screen-xl mx-auto">
+        <PopularClasses></PopularClasses>
+        <Gallery />
+        <PopularInstructors></PopularInstructors>
+      </div>
       <Reviews></Reviews>
     </div>
   );

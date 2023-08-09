@@ -70,7 +70,7 @@ const NavBar = () => {
   );
   return (
     <>
-      <div className="navbar z-20 bg-opacity-90 bg-zinc-900 white max-w-screen-xl lg:justify-between font-bold text-3xl sticky top-0">
+      <div className="navbar z-20 bg-opacity-90 bg-zinc-900 white lg:justify-between font-bold text-3xl sticky top-0">
         <div className="navbar-start ">
           <div className="dropdown">
             <label
