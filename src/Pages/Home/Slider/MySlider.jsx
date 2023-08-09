@@ -2,7 +2,10 @@ import { Carousel } from "flowbite-react";
 
 const MySlider = () => {
   return (
-    <Carousel slideInterval={4000} className=" h-[calc(100dvh-10dvh)] ">
+    <Carousel
+      slideInterval={4000}
+      className=" h-[calc(100dvh-30dvh)] lg:h-[calc(100dvh-10dvh)]"
+    >
       <img
         alt="slider-image-1"
         src="https://www.stmichaelsaldbourne.co.uk/wp-content/uploads/2023/06/IMG_5070-1170x500.jpg"
