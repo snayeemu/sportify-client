@@ -9,6 +9,7 @@ const PopularClasses = () => {
 
   useEffect(() => {
     if (allClasses) {
+      setIsLoading(true);
       const popularClasses = allClasses.slice(0, 6);
       setPopularClasses(popularClasses);
       setIsLoading(false);

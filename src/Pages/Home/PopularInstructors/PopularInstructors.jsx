@@ -8,6 +8,7 @@ const PopularInstructors = () => {
   const allInstructors = useInstructor();
 
   useEffect(() => {
+    setIsLoading(true);
     const popularInstructors = allInstructors.slice(0, 6);
     setPopularInstructors(popularInstructors);
     setIsLoading(false);
