@@ -45,10 +45,10 @@ const PopularInstructors = () => {
         {popularInstructors.map((instructor) => (
           <div
             key={instructor._id}
-            className="w-[70%] md:w-[100%] md:max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-slate-700 mx-auto dark:hover:bg-slate-800 hover:shadow-2xl hover:scale-[0.98] duration-500"
+            className="w-[90%] md:w-[100%] md:max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-slate-700 mx-auto dark:hover:bg-slate-800 hover:shadow-2xl hover:scale-[0.98] duration-500"
           >
             <img
-              className="rounded-t-lg h-[300px] w-full  "
+              className="rounded-t-lg h-[300px] w-full  px-14 "
               src={instructor.image}
               alt="instructor"
             />
@@ -58,7 +58,7 @@ const PopularInstructors = () => {
                 {instructor.name}
               </h5>
 
-              <p className="font-normal text-gray-700 dark:text-gray-400">
+              <p className="font-normal text-gray-700 dark:text-slate-300">
                 Email: {instructor.email}
               </p>
 
