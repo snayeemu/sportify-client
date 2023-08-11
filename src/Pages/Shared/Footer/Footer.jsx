@@ -41,10 +41,14 @@ const Footer = () => {
           <div>
             <h3 className="text-xl">USEFUL LINKS</h3>
             <div className="flex flex-col gap-4">
-              <Link className="text-[#606060] mt-9">Home</Link>
-              <Link className="text-[#606060]">Instructors</Link>
-              <Link className="text-[#606060]">Classes</Link>
-              <Link className="text-[#606060]">Instructor-Dashboard</Link>
+              <Link className="text-[#606060] hover:underline mt-9">Home</Link>
+              <Link className="text-[#606060] hover:underline">
+                Instructors
+              </Link>
+              <Link className="text-[#606060] hover:underline">Classes</Link>
+              <Link className="text-[#606060] hover:underline">
+                Instructor-Dashboard
+              </Link>
             </div>
           </div>
 
