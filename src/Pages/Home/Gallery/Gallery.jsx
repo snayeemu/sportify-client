@@ -1,8 +1,6 @@
 import { gallery } from "../../../utilities/utilities.js";
 
 const Gallery = () => {
-  console.log(gallery);
-
   return (
     <div>
       <h2 className="text-4xl m-5 xl:ms-0">Some Events</h2>

@@ -5,7 +5,7 @@ import useIsStudent from "../../../hooks/useIsStudent";
 import { AuthContext } from "../../../providers/AuthProvider";
 
 const NavBar = () => {
-  const { user, logOut } = useContext(AuthContext);
+  const { user, logOut, setFirstLogin } = useContext(AuthContext);
   const isUser = useIsStudent();
   const [aUser] = useIsInstructor();
   const [isSmallDeviceNavbarOpen, setIsSmallDeviceNavbarOpen] = useState(false);
@@ -14,6 +14,7 @@ const NavBar = () => {
     logOut()
       .then(() => {
         // Sign-out successful.
+        setFirstLogin(false);
       })
       .catch((error) => {
         // An error happened.
@@ -51,7 +52,7 @@ const NavBar = () => {
             </li>
           )}
           <li>
-            <img className="btn  " src={user.photoURL} alt="" />
+            <img className="btn" src={user?.photoURL} alt="" />
           </li>
           <li>
             <button className="btn btn-ghost" onClick={handleLogout}>
@@ -70,7 +71,7 @@ const NavBar = () => {
   );
   return (
     <>
-      <div className="navbar z-20 bg-opacity-90 bg-zinc-900 white lg:justify-between font-bold text-3xl sticky top-0">
+      <div className="navbar z-20 bg-opacity-90 bg-zinc-900 white lg:justify-between font-bold text-3xl  fixed top-0">
         <div className="navbar-start ">
           <div className="dropdown">
             <label

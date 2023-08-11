@@ -5,7 +5,6 @@ const PopularClasses = () => {
   const [popularClasses, setPopularClasses] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const allClasses = useClasses();
-  console.log(allClasses);
 
   useEffect(() => {
     if (allClasses) {
@@ -15,7 +14,6 @@ const PopularClasses = () => {
       setIsLoading(false);
     }
   }, [allClasses]);
-  console.log(popularClasses);
 
   if (isLoading) {
     return (

@@ -21,6 +21,7 @@ const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const googleProvider = new GoogleAuthProvider();
   const auth = getAuth(app);
+  const [firstLogin, setFirstLogin] = useState(true);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -43,14 +44,24 @@ const AuthProvider = ({ children }) => {
       } else {
         // User is signed out
         // ...
-        setUser(null);
+        if (firstLogin)
+          setUser({
+            name: "TestUser",
+            email: "test@me.com",
+            photoURL:
+              "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=580&q=80",
+            isAdmin: true,
+            isInstructor: true,
+          });
+        else setUser(null);
+
         localStorage.removeItem("access-token");
         setLoading(false);
       }
     });
 
     return () => unsubscribe();
-  }, [auth]);
+  }, [auth, firstLogin]);
 
   const createUser = (email, password) => {
     setLoading(true);
@@ -82,6 +93,7 @@ const AuthProvider = ({ children }) => {
   const authInfo = {
     user,
     setUser,
+    setFirstLogin,
     loading,
     signIn,
     createUser,
