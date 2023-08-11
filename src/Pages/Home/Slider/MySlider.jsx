@@ -1,15 +1,11 @@
-import { Carousel } from "flowbite-react";
-import slider1 from "../../../assets/slider-images/slider-1.jpeg";
-import slider4 from "../../../assets/slider-images/slider-4.jpeg";
-import slider5 from "../../../assets/slider-images/slider-5.jpeg";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 
-const spanStyle = {
-  padding: "20px",
-  background: "#efefef",
-  color: "#000000",
-};
+// const spanStyle = {
+//   padding: "20px",
+//   background: "#efefef",
+//   color: "#000000",
+// };
 
 const divStyle = {
   display: "flex",
