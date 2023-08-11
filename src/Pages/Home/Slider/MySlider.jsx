@@ -38,13 +38,13 @@ const MySlider = () => {
     //   <img alt="slider-image-1" src={slider4} className="w-full h-full" />
     //   <img alt="slider-image-1" src={slider5} className="w-full h-full" />
     // </Carousel>
-    <div className="slide-container">
+    <div className="slide-container max-w-screen-xl mx-auto">
       <Slide>
         {slideImages.map((slideImage, index) => (
           <div key={index}>
             <div
               style={{ ...divStyle, backgroundImage: `url(${slideImage.url})` }}
-              className="h-[60dvh] md:h-[90dvh]"
+              className="h-[60dvh] md:h-[100dvh]"
             >
               {/* <span style={spanStyle}>{slideImage.caption}</span> */}
             </div>
