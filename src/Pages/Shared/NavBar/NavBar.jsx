@@ -25,30 +25,54 @@ const NavBar = () => {
   const navOpt = (
     <>
       <li>
-        <Link to={"/"}>Home</Link>
+        <Link onClick={() => setIsSmallDeviceNavbarOpen(false)} to={"/"}>
+          Home
+        </Link>
       </li>
       <li>
-        <Link to={"/instructors"}>Instructors</Link>
+        <Link
+          onClick={() => setIsSmallDeviceNavbarOpen(false)}
+          to={"/instructors"}
+        >
+          Instructors
+        </Link>
       </li>
       <li>
-        <Link to={"/classes"}>Classes</Link>
+        <Link onClick={() => setIsSmallDeviceNavbarOpen(false)} to={"/classes"}>
+          Classes
+        </Link>
       </li>
 
       {user ? (
         <>
           {isUser && (
             <li>
-              <Link to={"/dashboard/user"}>Student-Dashboard</Link>
+              <Link
+                onClick={() => setIsSmallDeviceNavbarOpen(false)}
+                to={"/dashboard/user"}
+              >
+                Student-Dashboard
+              </Link>
             </li>
           )}
           {aUser?.isInstructor && (
             <li>
-              <Link to={"/dashboard/instructor"}>Instructor-Dashboard</Link>
+              <Link
+                onClick={() => setIsSmallDeviceNavbarOpen(false)}
+                to={"/dashboard/instructor"}
+              >
+                Instructor-Dashboard
+              </Link>
             </li>
           )}
           {aUser?.isAdmin && (
             <li>
-              <Link to={"/dashboard/admin"}>Admin-Dashboard</Link>
+              <Link
+                onClick={() => setIsSmallDeviceNavbarOpen(false)}
+                to={"/dashboard/admin"}
+              >
+                Admin-Dashboard
+              </Link>
             </li>
           )}
           <li>
@@ -63,7 +87,12 @@ const NavBar = () => {
       ) : (
         <>
           <li>
-            <Link to={"/login"}>Login</Link>
+            <Link
+              onClick={() => setIsSmallDeviceNavbarOpen(false)}
+              to={"/login"}
+            >
+              Login
+            </Link>
           </li>
         </>
       )}
@@ -71,15 +100,13 @@ const NavBar = () => {
   );
   return (
     <>
-      <div className="navbar z-20 bg-opacity-90 bg-zinc-900 white lg:justify-between font-bold text-3xl  fixed top-0">
+      <div className="navbar z-20 bg-opacity-90 bg-zinc-900 white lg:justify-between font-bold text-3xl  sticky top-0">
         <div className="navbar-start ">
           <div className="dropdown">
             <label
               tabIndex={0}
               className="btn btn-ghost lg:hidden text-slate-200 hover:bg-slate-900"
-              onClick={() =>
-                setIsSmallDeviceNavbarOpen(!isSmallDeviceNavbarOpen)
-              }
+              onClick={() => setIsSmallDeviceNavbarOpen((prev) => !prev)}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -96,14 +123,14 @@ const NavBar = () => {
                 />
               </svg>
             </label>
-            <ul
-              tabIndex={0}
-              className={`${
-                isSmallDeviceNavbarOpen ? "block" : "hidden"
-              } menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 flex gap-5`}
-            >
-              {navOpt}
-            </ul>
+            {isSmallDeviceNavbarOpen && (
+              <ul
+                tabIndex={0}
+                className={`menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 flex gap-5`}
+              >
+                {navOpt}
+              </ul>
+            )}
           </div>
           <a className="btn btn-ghost normal-case text-xl text-yellow-600">
             <span>
