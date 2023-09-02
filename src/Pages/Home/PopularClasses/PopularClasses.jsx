@@ -3,15 +3,13 @@ import useClasses from "../../../hooks/useClasses";
 
 const PopularClasses = () => {
   const [popularClasses, setPopularClasses] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+
   const allClasses = useClasses();
 
   useEffect(() => {
     if (allClasses) {
-      setIsLoading(true);
       const popularClasses = allClasses.slice(0, 6);
       setPopularClasses(popularClasses);
-      setIsLoading(false);
     }
   }, [allClasses]);
 
@@ -48,6 +46,7 @@ const PopularClasses = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 dark">
         {popularClasses.map((aClass) => (
           <div
+            data-aos="fade-down"
             key={aClass._id}
             className="w-[90%] md:w-full md:max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-slate-700 mx-auto dark:hover:bg-slate-800 hover:shadow-2xl hover:scale-[0.98] hover:-rotate-2 duration-500"
           >

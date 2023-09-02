@@ -1,5 +1,8 @@
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 // const spanStyle = {
 //   padding: "20px",
@@ -25,20 +28,30 @@ const slideImages = [
 ];
 
 const MySlider = () => {
+  useEffect(() => {
+    AOS.init({ once: false });
+    AOS.refresh();
+  }, []);
+
   return (
-    <div className="slide-container max-w-screen-xl mx-auto">
-      <Slide>
-        {slideImages.map((slideImage, index) => (
-          <div key={index}>
-            <div
-              style={{ ...divStyle, backgroundImage: `url(${slideImage.url})` }}
-              className="h-[60dvh] md:h-[90dvh]"
-            >
-              {/* <span style={spanStyle}>{slideImage.caption}</span> */}
+    <div data-aos="flip-up">
+      <div className="slide-container max-w-screen-xl mx-auto">
+        <Slide>
+          {slideImages.map((slideImage, index) => (
+            <div key={index}>
+              <div
+                style={{
+                  ...divStyle,
+                  backgroundImage: `url(${slideImage.url})`,
+                }}
+                className="h-[60dvh] md:h-[90dvh]"
+              >
+                {/* <span style={spanStyle}>{slideImage.caption}</span> */}
+              </div>
             </div>
-          </div>
-        ))}
-      </Slide>
+          ))}
+        </Slide>
+      </div>
     </div>
   );
 };
