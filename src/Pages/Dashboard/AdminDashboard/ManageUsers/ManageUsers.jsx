@@ -40,10 +40,10 @@ const ManageUsers = () => {
   };
 
   return (
-    <div className="overflow-x-auto">
+    <div className="overflow-x-auto text-white">
       <table className="table">
         {/* head */}
-        <thead>
+        <thead className="text-white">
           <tr>
             <th>Number</th>
             <th>Photo</th>
@@ -82,7 +82,7 @@ const ManageUsers = () => {
                   disabled={
                     user?.isInstructor || instructorDisable.includes(index)
                   }
-                  className="btn btn-warning btn-sm"
+                  className="btn btn-warning btn-sm text-white"
                 >
                   Make Instructor
                 </button>
@@ -91,7 +91,7 @@ const ManageUsers = () => {
                 <button
                   onClick={() => handleMakeAdmin(user?.email, index)}
                   disabled={user?.isAdmin || adminDisable.includes(index)}
-                  className="btn btn-success btn-sm"
+                  className="btn btn-success btn-sm text-white"
                 >
                   Make Admin
                 </button>
