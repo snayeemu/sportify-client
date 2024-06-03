@@ -1,6 +1,6 @@
 export const gallery = [
   [
-    "https://cse.manarat.ac.bd/storage/gallery/1711182032.jpeg",
+    "https://i.ibb.co/VCwS0hT/image.png",
 
     "https://cse.manarat.ac.bd/storage/gallery/1633613039.png",
 
@@ -8,7 +8,7 @@ export const gallery = [
   ],
 
   [
-    "https://eee.manarat.ac.bd/storage/gallery/1711255869.jpg",
+    "https://i.ibb.co/BTsnjnk/image.png",
 
     "https://eee.manarat.ac.bd/storage/gallery/1636452337.jpg",
 
@@ -16,7 +16,7 @@ export const gallery = [
   ],
 
   [
-    "https://eee.manarat.ac.bd/storage/gallery/1633693824.jpg",
+    "https://i.ibb.co/Qcfr0DG/image.png",
 
     "https://law.manarat.ac.bd/storage/gallery/1634147676.JPG",
 
@@ -24,7 +24,7 @@ export const gallery = [
   ],
 
   [
-    "https://law.manarat.ac.bd/storage/gallery/1634147624.JPG",
+    "https://i.ibb.co/hLpSkhw/image.png",
 
     "https://law.manarat.ac.bd/storage/gallery/1634147449.webp",
 
