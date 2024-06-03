@@ -86,7 +86,7 @@ const Footer = () => {
               <div className="flex gap-4">
                 <CiLocationOn className="text-xl text-[#69bc5f]" />
                 <p className="text-[#606060]">
-                  4127/ 5B-C Mislane Road, Gibraltar, UK
+                  4127/ 5B-C Nijami Road, Dhaka, Bangladesh
                 </p>
               </div>
 
