@@ -70,7 +70,7 @@ const PopularClasses = () => {
                 </p>
               </div>
               <p className="mb-3 font-normal text-gray-700 dark:text-slate-200">
-                {"Price"}: {(aClass.price * 100).toFixed(2)}BDT
+                {"Price"}: {(aClass.price * 100).toFixed(0)}BDT
               </p>
             </div>
           </div>
