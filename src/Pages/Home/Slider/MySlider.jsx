@@ -18,11 +18,11 @@ const divStyle = {
 };
 const slideImages = [
   {
-    url: "https://i.ibb.co/54wPCJx/slider-1.jpg",
+    url: "https://cse.manarat.ac.bd/storage/slider/1633492828.png",
     caption: "Slide 3",
   },
   {
-    url: "https://i.ibb.co/kSbFK9w/slider-4.jpg",
+    url: "https://pharmacy.manarat.ac.bd/storage/slider/1634200905.gif",
     caption: "Slide 1",
   },
 ];

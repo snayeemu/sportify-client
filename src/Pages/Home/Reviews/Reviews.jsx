@@ -6,35 +6,35 @@ const Reviews = () => {
   const [reviews] = useState([
     {
       clientPicture:
-        "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
+        "https://i.ibb.co/d7FPdp5/passport-size.png",
       reviewTitle: "Best Sports Training!",
       review:
         "I'm extremely satisfied with the training I received at the sports academy. The coaches are skilled and dedicated. Will definitely recommend to all sports enthusiasts!",
-      clientName: "Michael Johnson",
+      clientName: "Shaikh Nayeem Uddin",
     },
     {
       clientPicture:
-        "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dXNlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
+        "https://i.ibb.co/4TKxQd2/image.png",
       reviewTitle: "Transformative Experience",
       review:
         "Joining this sports academy was a game-changer for me. The facilities are top-notch, and the personalized guidance from the trainers helped me excel in my chosen sport.",
-      clientName: "Sophia Williams",
+      clientName: "Mehedi Hasan",
     },
     {
       clientPicture:
-        "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+        "https://i.ibb.co/grM1Vsr/image.png",
       reviewTitle: "Unparalleled Coaching",
       review:
         "I've trained at several academies, but none compare to this one. The coaches have a deep understanding of the game and focus on both skill and strategy.",
-      clientName: "Ethan Martinez",
+      clientName: "Habib Sheikh",
     },
     {
       clientPicture:
-        "https://images.unsplash.com/photo-1557862921-37829c790f19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHVzZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
+        "https://i.ibb.co/rs7tWyy/image.png",
       reviewTitle: "A Sports Haven",
       review:
         "From the moment I stepped in, I knew I was in the right place. The academy's positive atmosphere, combined with rigorous training, has helped me improve significantly.",
-      clientName: "Olivia Walker",
+      clientName: "Shamim Ahmed",
     },
   ]);
 
