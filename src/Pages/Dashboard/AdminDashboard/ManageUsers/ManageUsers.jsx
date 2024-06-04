@@ -40,7 +40,7 @@ const ManageUsers = () => {
   };
 
   return (
-    <div className="overflow-x-auto text-white">
+    <div className="overflow-x-auto text-white ">
       <table className="table">
         {/* head */}
         <thead className="text-white">

@@ -104,7 +104,7 @@ const router = createBrowserRouter([
             element: <ManageClass></ManageClass>,
           },
           {
-            path: "dashboard/manageUsers",
+            path: "manageUsers",
             element: <ManageUsers></ManageUsers>,
           },
         ],
