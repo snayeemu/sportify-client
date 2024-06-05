@@ -24,14 +24,14 @@ const AdminDashboard = () => {
               </svg>
             </label>
           </div>
-          <div className="flex-1 px-2 mx-2 text-white">
-            <Link to="/dashboard/admin">Admin Dashboard</Link>
+          <div className="flex-1 px-2 mx-2 text-white ">
+            <Link to="/dashboard/admin" className="btn btn-warning text-white">Admin Dashboard</Link>
           </div>
           <div className="flex-none hidden lg:block">
             <ul className="menu menu-horizontal">
               {/* Navbar menu content here */}
-              <li className="text-white btn btn-primary">
-                <Link to={"/dashboard/admin/manageUsers"}>
+              <li className="">
+                <Link to={"/dashboard/admin/manageUsers"} className="btn bg-blue-700 text-white  py-4">
                   Manage Users
                 </Link>
               </li>

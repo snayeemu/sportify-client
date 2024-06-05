@@ -133,9 +133,9 @@ const NavBar = () => {
             )}
           </div>
           <a className="btn btn-ghost normal-case text-xl text-yellow-600">
-            <span>
+            <Link to={"/"}><span>
               Sport<span className="text-red-600">ify</span>
-            </span>
+            </span></Link>
           </a>
         </div>
         <div className="navbar-center hidden lg:flex text-white">

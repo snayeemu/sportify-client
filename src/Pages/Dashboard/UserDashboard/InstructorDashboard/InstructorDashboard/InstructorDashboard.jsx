@@ -24,14 +24,14 @@ const InstructorDashboard = () => {
               </svg>
             </label>
           </div>
-          <div className="flex-1 px-2 mx-2 text-white">
-            Instructor Dashboard
+          <div className="flex-1 px-2 mx-2 text-white ">
+            <Link to={"/dashboard/instructor"} className="btn btn-warning text-white">Instructor Dashboard</Link>
           </div>
           <div className="flex-none hidden lg:block">
             <ul className="menu menu-horizontal">
               {/* Navbar menu content here */}
               <li>
-                <Link to={"/dashboard/instructor/myClasses"}>My Classes</Link>
+                <Link to={"/dashboard/instructor/myClasses"} className="text-white btn btn-primary py-4">My Classes</Link>
               </li>
               {/* <li>
                 <a>Navbar Item 2</a>

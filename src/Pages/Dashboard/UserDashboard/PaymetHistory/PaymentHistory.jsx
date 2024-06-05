@@ -31,10 +31,10 @@ const PaymentHistory = () => {
 
   return (
     <div className="overflow-x-auto my-8">
-      <table className="table">
+      <table className="table text-white">
         {/* head */}
         <thead>
-          <tr>
+          <tr className="text-white">
             <th>Number</th>
             <th>Email</th>
             <th>Date</th>

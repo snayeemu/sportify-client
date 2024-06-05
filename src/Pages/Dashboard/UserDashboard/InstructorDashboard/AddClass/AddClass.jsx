@@ -40,9 +40,9 @@ const AddClass = () => {
   return (
     <div className="flex justify-center my-8">
       <form className="max-w-md w-full" onSubmit={handleSubmit}>
-        <h2 className="text-2xl font-bold mb-4">Add a Class</h2>
+        <h2 className="text-2xl font-bold mb-4 text-white">Add a Class</h2>
         <div className="mb-4">
-          <label htmlFor="className" className="block text-gray-700">
+          <label htmlFor="className" className="block text-white">
             Class Name
           </label>
           <input
@@ -55,7 +55,7 @@ const AddClass = () => {
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="classImage" className="block text-gray-700">
+          <label htmlFor="classImage" className="block text-white">
             Class Image
           </label>
           <input
@@ -68,7 +68,7 @@ const AddClass = () => {
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="instructorName" className="block text-gray-700">
+          <label htmlFor="instructorName" className="block text-white">
             Instructor Name
           </label>
           <input
@@ -80,7 +80,7 @@ const AddClass = () => {
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="instructorEmail" className="block text-gray-700">
+          <label htmlFor="instructorEmail" className="block text-white">
             Instructor Email
           </label>
           <input
@@ -92,7 +92,7 @@ const AddClass = () => {
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="availableSeats" className="block text-gray-700">
+          <label htmlFor="availableSeats" className="block text-white">
             Available Seats
           </label>
           <input
@@ -105,7 +105,7 @@ const AddClass = () => {
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="price" className="block text-gray-700">
+          <label htmlFor="price" className="block text-white">
             Price
           </label>
           <input

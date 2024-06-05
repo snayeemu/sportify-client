@@ -60,8 +60,8 @@ const TakenClasses = () => {
 
   return (
     <div>
-      <div className="my-40">
-        <h2 className="text-4xl">My Selected Classes</h2>
+      <div className="my-40 max-w-screen-xl mx-auto">
+        <h2 className="text-4xl text-white ">My Selected Classes</h2>
         <div className="md:grid grid-cols-3 gap-4 justify-between my-8">
           {takenClass.map((aClass) => (
             <div

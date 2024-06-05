@@ -18,8 +18,8 @@ const MyClass = () => {
   //   console.log(myClasses);
 
   return (
-    <div className="my-40">
-      <h2 className="text-4xl">Popular Classes</h2>
+    <div className="my-40 max-w-screen-xl mx-auto">
+      <h2 className="text-4xl text-white">My Classes</h2>
       <div className="md:grid grid-cols-3 gap-4 justify-between my-8">
         {myClasses.map((aClass) => (
           <div
@@ -38,7 +38,7 @@ const MyClass = () => {
               </p>
               <p>{aClass?.feedback && `Feedback: ${aClass?.feedback}`}</p>
               <div className="card-actions justify-end">
-                <button className="btn btn-warning ">
+                <button className="btn btn-warning text-white">
                   Status: {aClass?.status ? `${aClass?.status}` : "Approved"}
                 </button>
               </div>

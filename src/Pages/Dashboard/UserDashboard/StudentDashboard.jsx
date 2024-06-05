@@ -6,7 +6,7 @@ const StudentDashboard = () => {
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
         {/* Navbar */}
-        <div className="w-full navbar bg-base-300">
+        <div className="w-full navbar ">
           <div className="flex-none lg:hidden">
             <label htmlFor="my-drawer-3" className="btn btn-square btn-ghost">
               <svg
@@ -24,17 +24,19 @@ const StudentDashboard = () => {
               </svg>
             </label>
           </div>
-          <div className="flex-1 px-2 mx-2">Student Dashboard</div>
+          <div className="flex-1 px-2 mx-2">
+            <Link to="/dashboard/user" className="btn btn-warning text-white">Student Dashboard</Link>
+          </div>
           <div className="flex-none hidden lg:block">
-            <ul className="menu menu-horizontal">
+            <ul className="menu menu-horizontal ">
               {/* Navbar menu content here */}
               <li>
-                <Link to={"/dashboard/user/enrolledClasses"}>
+                <Link to={"/dashboard/user/enrolledClasses"} className="text-white btn btn-primary py-4 mr-3">
                   My Enrolled Classes
                 </Link>
               </li>
               <li>
-              <Link to={"/dashboard/user/paymentHistory"}>
+              <Link to={"/dashboard/user/paymentHistory"} className="text-white btn btn-primary">
                   Payment History
                 </Link>
               </li>
