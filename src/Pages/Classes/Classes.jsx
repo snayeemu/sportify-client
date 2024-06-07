@@ -88,6 +88,7 @@ const Classes = () => {
                     {"Instructor"}: {aClass.instructorName}
                   </p>
                   <p>Available Seats: {aClass.availableSeat}</p>
+                  <p>Time: {aClass.classTime}</p>
                   <p>Price: ${aClass.price}</p>
                   <div className="card-actions justify-end">
                     <button
