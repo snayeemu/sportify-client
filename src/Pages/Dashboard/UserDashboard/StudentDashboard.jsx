@@ -38,13 +38,13 @@ const StudentDashboard = () => {
               <li>
               {/* https://drive.google.com/file/d/1NMyj1Th0b4a77iNV2hR769_QEryTnW2S/view?usp=sharing */}
                 <a
-                  href="https://drive.google.com/u/0/uc?id=1NMyj1Th0b4a77iNV2hR769_QEryTnW2S&export=download"
+                  href="https://drive.google.com/drive/folders/1NE7DBQx1fkeo-eIedAfFYWfkjWrDRgg3?usp=sharing"
                   className={`text-secondary font-poppins  cursor-pointer text-[18px] font-medium py-4`}
                   target={"_blank"}
                   rel="noopener noreferrer"
                   download
                 >
-                  Download Certificate
+                  Get Certificate
                 </a>
               </li>
               <li>
