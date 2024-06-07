@@ -78,7 +78,7 @@ const Classes = () => {
                   <img
                     src={aClass.classImage}
                     alt="Shoes"
-                    className="w-[70%] mt-4 rounded-xl"
+                    className="rounded-t-lg h-[250px] w-full"
                   />
                 </figure>
                 <div className="card-body">

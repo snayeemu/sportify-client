@@ -9,6 +9,21 @@ const Instructor = () => {
     setPopularInstructors(allInstructors);
   }, [allInstructors]);
 
+  const handleFeedback = (aClass) => {
+    const feedbackInfo = { feedback, id: aClass._id };
+    fetch(`https://summer-camp-server-two-delta.vercel.app/feedback`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(feedbackInfo),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount > 0) alert("Sent");
+      });
+  };
+
   return (
     <div className="my-40">
       <h2 className="text-4xl text-white">Our Instructors</h2>
@@ -22,7 +37,7 @@ const Instructor = () => {
               <img
                 src={instructor.image}
                 alt="Shoes"
-                className="w-[50%] mt-4 rounded-xl"
+                className="rounded-t-lg h-[300px] w-full  px-14 "
               />
             </figure>
             <div className="card-body">

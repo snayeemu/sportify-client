@@ -1,9 +1,12 @@
 import { Outlet, Link } from "react-router-dom";
 
 const StudentDashboard = () => {
+  
+
   return (
     <div className="drawer">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
+
       <div className="drawer-content flex flex-col">
         {/* Navbar */}
         <div className="w-full navbar ">
@@ -25,18 +28,38 @@ const StudentDashboard = () => {
             </label>
           </div>
           <div className="flex-1 px-2 mx-2">
-            <Link to="/dashboard/user" className="btn btn-warning text-white">Student Dashboard</Link>
+            <Link to="/dashboard/user" className="btn btn-warning text-white">
+              Student Dashboard
+            </Link>
           </div>
           <div className="flex-none hidden lg:block">
             <ul className="menu menu-horizontal ">
               {/* Navbar menu content here */}
               <li>
-                <Link to={"/dashboard/user/enrolledClasses"} className="text-white btn btn-primary py-4 mr-3">
+              {/* https://drive.google.com/file/d/1NMyj1Th0b4a77iNV2hR769_QEryTnW2S/view?usp=sharing */}
+                <a
+                  href="https://drive.google.com/u/0/uc?id=1NMyj1Th0b4a77iNV2hR769_QEryTnW2S&export=download"
+                  className={`text-secondary font-poppins  cursor-pointer text-[18px] font-medium py-4`}
+                  target={"_blank"}
+                  rel="noopener noreferrer"
+                  download
+                >
+                  Download Certificate
+                </a>
+              </li>
+              <li>
+                <Link
+                  to={"/dashboard/user/enrolledClasses"}
+                  className="text-white btn btn-primary py-4 mr-3"
+                >
                   My Enrolled Classes
                 </Link>
               </li>
               <li>
-              <Link to={"/dashboard/user/paymentHistory"} className="text-white btn btn-primary">
+                <Link
+                  to={"/dashboard/user/paymentHistory"}
+                  className="text-white btn btn-primary"
+                >
                   Payment History
                 </Link>
               </li>

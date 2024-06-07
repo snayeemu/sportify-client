@@ -69,7 +69,11 @@ const TakenClasses = () => {
               className="card bg-black text-white bg-opacity-80 w-96  shadow-xl"
             >
               <figure>
-                <img src={aClass.classImage} alt="Shoes" />
+                <img
+                  className="rounded-t-lg h-[250px] w-full"
+                  src={aClass.classImage}
+                  alt="Shoes"
+                />
               </figure>
               <div className="card-body">
                 <h2 className="card-title">{aClass.className}</h2>
@@ -78,6 +82,7 @@ const TakenClasses = () => {
                   {"Instructor"}: {aClass.instructorName}
                 </p>
                 <p>Available Seats: {aClass.availableSeat}</p>
+                {aClass.classTime && <p>Time: {aClass.classTime}</p>}
                 <p>Price: ${aClass.price}</p>
                 <div className="card-actions justify-end">
                   <Link to={`/dashboard/user/${aClass._id}`}>
