@@ -71,7 +71,7 @@ const ManageClass = () => {
             className="card bg-black text-white bg-opacity-80 w-96  shadow-xl"
           >
             <figure>
-              <img src={aClass.classImage} alt="Shoes" />
+              <img src={aClass.classImage} alt="Shoes" className="rounded-t-lg h-[250px] w-full"/>
             </figure>
             <div className="card-body">
               <h2 className="card-title">{aClass.className}</h2>
