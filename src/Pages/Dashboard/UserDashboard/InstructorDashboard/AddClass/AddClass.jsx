@@ -7,6 +7,7 @@ const AddClass = () => {
   const [classImage, setClassImage] = useState("");
   const [availableSeats, setAvailableSeats] = useState(0);
   const [price, setPrice] = useState(0);
+  const [classTime, setClassTime] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,6 +17,7 @@ const AddClass = () => {
       classImage: classImage,
       price: price,
       availableSeat: availableSeats,
+      classTime: classTime,
       studentEnrolled: 0,
       instructorName: loggedInUser.displayName,
       email: loggedInUser?.email,
@@ -101,6 +103,20 @@ const AddClass = () => {
             className="form-input mt-1 block w-full border rounded focus:border-blue-500 focus:outline-none"
             value={availableSeats}
             onChange={(e) => setAvailableSeats(e.target.value)}
+            required
+          />
+        </div>
+        <div className="mb-4">
+          <label htmlFor="className" className="block text-white">
+            Class Time
+          </label>
+          <input
+            type="text"
+            id="classTime"
+            className="form-input mt-1 block w-full border rounded focus:border-blue-500 focus:outline-none"
+            value={classTime}
+            placeholder="7am to 9am"
+            onChange={(e) => setClassTime(e.target.value)}
             required
           />
         </div>
