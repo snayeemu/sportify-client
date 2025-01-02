@@ -10,7 +10,7 @@ export const gallery = [
   [
     "https://i.ibb.co/kqtT4bN/miu-sports-2-min.png",
 
-    "https://eee.manarat.ac.bd/storage/gallery/1636452337.jpg",
+    "https://images.unsplash.com/photo-1593766729977-e1f01ee30e49?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 
     "https://eee.manarat.ac.bd/storage/gallery/1711255471.jpg",
   ],
